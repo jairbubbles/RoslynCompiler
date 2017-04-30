@@ -46,7 +46,7 @@ As you can see it's much slower with framework 4.6.2
 ## Remarks
 
 - I tried UseLegacyJIT in app.config but it resulted in worse performance (as we could expect)
-```
+```xml
 <runtime>
       <useLegacyJit enabled="1" />
  </runtime>
