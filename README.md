@@ -1,5 +1,9 @@
 # RoslynCompiler
-Simple RoslynCompiler (2.1.0) benchmark. I'm currently switching a project to Roslyn and startup performance (mainly due to JIT compilation) is an issue on that tool (compared to previous compiler). I"ve tried several versions of Roslyn and I have inconsistent results. Right now I'm focusing on .NET Framework versions performance.
+Simple RoslynCompiler benchmark. I'm currently switching a project to Roslyn and startup performance (mainly due to JIT compilation) is an issue on that tool (compared to previous compiler). I've tried several versions of Roslyn and I have inconsistent results. Right now I'm focusing on benchmarking performances for different .NET Framework versions.
+
+I'm using multicore JIT to improve startup time.
+
+On this sample I'm using latest [Roslyn NuGet package](https://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp/) (currently 2.1.0) 
 
 # Instructions
 Open RoslynComparer.sln with Visual Studio 2017 and launch Comparer project.
