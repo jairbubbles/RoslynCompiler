@@ -15,7 +15,17 @@ namespace Comparer
             var frameworks = new[] { "4.6", "4.6.1", "4.6.2" };
             foreach (var framework in frameworks)
             {
-                var exePath = $@"../../../RoslynCompiler_{framework}\bin\Release\RoslynCompiler.exe";
+#if DEBUG
+                var exePath = Path.Combine(Environment.CurrentDirectory, $@"../../../RoslynCompiler_{framework}\bin\Debug\RoslynCompiler.exe");
+#else
+                var exePath = Path.Combine(Environment.CurrentDirectory, $@"../../../RoslynCompiler_{framework}\bin\Release\RoslynCompiler.exe");
+#endif
+
+                if (!File.Exists(exePath))
+                {
+                    Console.WriteLine("RoslynCompiler.exe not found for that framework!");
+                    continue;
+                }
 
                 Console.WriteLine($"== Run Roslyn Compiler with .NET Framework {framework} ==");
 
