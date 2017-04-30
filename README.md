@@ -1,5 +1,5 @@
 # RoslynCompiler
-Simple RoslynCompiler benchmark.
+Simple RoslynCompiler (2.1.0) benchmark.
 
 Open RoslynComparer.sln with Visual Studio 2017 and launch Comparer project.
 
