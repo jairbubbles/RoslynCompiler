@@ -1,6 +1,7 @@
 # RoslynCompiler
-Simple RoslynCompiler (2.1.0) benchmark.
+Simple RoslynCompiler (2.1.0) benchmark. I'm currently switching a project to Roslyn and startup performance is an issue on that tool (compared to previous compiler). I"ve tried several versions of Roslyn and I have inconsistent results. Right now I'm focusing on .NET Framework versions performance.
 
+# Instructions
 Open RoslynComparer.sln with Visual Studio 2017 and launch Comparer project.
 
 Here are the results on my computer:
