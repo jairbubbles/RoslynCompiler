@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Runtime;
+using System.Runtime.Versioning;
 
 namespace RoslynCompiler
 {
@@ -66,7 +67,7 @@ class Program
         {
             // Enable Multicore JIT (https://blogs.msdn.microsoft.com/dotnet/2012/10/18/an-easy-solution-for-improving-app-launch-performance/)
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var profileFolder = Path.Combine(appData, "RoslynCompiler");
+            var profileFolder = Path.Combine(appData, "RoslynCompiler", GetTargetFramework());
             Directory.CreateDirectory(profileFolder);
             ProfileOptimization.SetProfileRoot(profileFolder);
             ProfileOptimization.StartProfile("Startup.Profile");
@@ -75,6 +76,19 @@ class Program
             stopWatch.Start();
             SimpleCompilation();
             Console.Write($"Compilation time: {stopWatch.ElapsedMilliseconds} ms");
+        }
+
+        private static string GetTargetFramework()
+        {
+            var targetFramework = "Unknown";
+            var targetFrameworkAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(TargetFrameworkAttribute), true);
+            if (targetFrameworkAttributes.Length > 0)
+            {
+                var targetFrameworkAttribute = (TargetFrameworkAttribute)targetFrameworkAttributes.First();
+                targetFramework = targetFrameworkAttribute.FrameworkDisplayName;
+            }
+
+            return targetFramework;
         }
     }
 }
