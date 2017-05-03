@@ -12,7 +12,7 @@ namespace Comparer
     {
         static void Main(string[] args)
         {
-            var frameworks = new[] { "4.6", "4.6.1", "4.6.2" };
+            var frameworks = new[] { "4.6", "4.6.1", "4.6.2", "4.7" };
             foreach (var framework in frameworks)
             {
 #if DEBUG
