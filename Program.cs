@@ -24,11 +24,7 @@ namespace RoslynCompiler
                 options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary),
                 syntaxTrees: from source in sources
                              select CSharpSyntaxTree.ParseText(source),
-                references: from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                            where !string.IsNullOrEmpty(assembly.Location)
-                            select MetadataReference.CreateFromFile(assembly.Location)
-                            );
-
+                references: GetReferences());
 
             EmitResult emitResult;
 
@@ -45,6 +41,14 @@ namespace RoslynCompiler
 
             var message = string.Join("\r\n", emitResult.Diagnostics);
             throw new ApplicationException(message);
+        }
+
+        private static IEnumerable<MetadataReference> GetReferences()
+        {
+            var frameworkVersion = "4.6";
+            var frameworkPath = $@"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v{frameworkVersion}";
+            yield return MetadataReference.CreateFromFile(Path.Combine(frameworkPath, "mscorlib.dll"));
+            yield return MetadataReference.CreateFromFile(Path.Combine(frameworkPath, "System.Core.dll"));
         }
 
         public static string simpleExample =
@@ -65,17 +69,22 @@ class Program
 
         static void Main(string[] args)
         {
+            EnableMultiCoreJit();
+
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+            SimpleCompilation();
+            Console.Write($"Compilation time: {stopWatch.ElapsedMilliseconds} ms");
+        }
+
+        private static void EnableMultiCoreJit()
+        {
             // Enable Multicore JIT (https://blogs.msdn.microsoft.com/dotnet/2012/10/18/an-easy-solution-for-improving-app-launch-performance/)
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var profileFolder = Path.Combine(appData, "RoslynCompiler", GetTargetFramework());
             Directory.CreateDirectory(profileFolder);
             ProfileOptimization.SetProfileRoot(profileFolder);
             ProfileOptimization.StartProfile("Startup.Profile");
-
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
-            SimpleCompilation();
-            Console.Write($"Compilation time: {stopWatch.ElapsedMilliseconds} ms");
         }
 
         private static string GetTargetFramework()
