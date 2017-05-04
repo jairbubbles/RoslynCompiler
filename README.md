@@ -10,6 +10,16 @@ Open RoslynComparer.sln with Visual Studio 2017 and launch Comparer project.
 
 Here are the results on my computer:
 ```
+== Run Roslyn Compiler with .NET Framework 4.6 ==
+ Creating startup profile:
+  Compilation time: 961 ms  Execution time: 1080 ms
+  Compilation time: 1021 ms  Execution time: 1113 ms
+  Compilation time: 953 ms  Execution time: 1048 ms
+ Use startup profile:
+  Compilation time: 601 ms  Execution time: 697 ms
+  Compilation time: 619 ms  Execution time: 713 ms
+  Compilation time: 640 ms  Execution time: 732 ms
+
 == Run Roslyn Compiler with .NET Framework 4.6.1 ==
  Creating startup profile:
   Compilation time: 955 ms  Execution time: 1064 ms
@@ -45,7 +55,7 @@ As you can see it's much slower with .NET framework 4.6.2 and 4.7.
 
 ## Remarks
 
-- I tried UseLegacyJIT in app.config but it resulted in worse performance (as we could expect)
+- I tried UseLegacyJIT in app.config but it resulted in worse performance (as we could have expected)
 ```xml
 <runtime>
       <useLegacyJit enabled="1" />
