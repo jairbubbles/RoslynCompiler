@@ -52,4 +52,5 @@ As you can see it's much slower with framework 4.6.2
  </runtime>
  ```
  - Tracing with WPA confirmed me the JIT time is really slower with 4.6.2
+ ![diff_screen](Diff_Screen.png)
  
