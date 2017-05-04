@@ -12,43 +12,35 @@ Here are the results on my computer:
 ```
 == Run Roslyn Compiler with .NET Framework 4.6 ==
  Creating startup profile:
-  Compilation time: 961 ms  Execution time: 1080 ms
-  Compilation time: 1021 ms  Execution time: 1113 ms
-  Compilation time: 953 ms  Execution time: 1048 ms
+  Compilation time: 1007 ms  Execution time: 1120 ms
  Use startup profile:
-  Compilation time: 601 ms  Execution time: 697 ms
-  Compilation time: 619 ms  Execution time: 713 ms
-  Compilation time: 640 ms  Execution time: 732 ms
+  Compilation time: 694 ms  Execution time: 785 ms
+  Compilation time: 612 ms  Execution time: 714 ms
+  Compilation time: 634 ms  Execution time: 726 ms
 
 == Run Roslyn Compiler with .NET Framework 4.6.1 ==
  Creating startup profile:
-  Compilation time: 955 ms  Execution time: 1064 ms
-  Compilation time: 971 ms  Execution time: 1066 ms
-  Compilation time: 950 ms  Execution time: 1043 ms
+  Compilation time: 961 ms  Execution time: 1069 ms
  Use startup profile:
-  Compilation time: 586 ms  Execution time: 679 ms
-  Compilation time: 614 ms  Execution time: 708 ms
-  Compilation time: 607 ms  Execution time: 701 ms
+  Compilation time: 646 ms  Execution time: 740 ms
+  Compilation time: 645 ms  Execution time: 741 ms
+  Compilation time: 605 ms  Execution time: 699 ms
 
 == Run Roslyn Compiler with .NET Framework 4.6.2 ==
  Creating startup profile:
-  Compilation time: 2190 ms  Execution time: 2313 ms
-  Compilation time: 2185 ms  Execution time: 2297 ms
-  Compilation time: 2194 ms  Execution time: 2309 ms
+  Compilation time: 2223 ms  Execution time: 2346 ms
  Use startup profile:
-  Compilation time: 1333 ms  Execution time: 1444 ms
-  Compilation time: 1367 ms  Execution time: 1479 ms
-  Compilation time: 1370 ms  Execution time: 1479 ms
+  Compilation time: 1395 ms  Execution time: 1510 ms
+  Compilation time: 1406 ms  Execution time: 1518 ms
+  Compilation time: 1390 ms  Execution time: 1500 ms
 
 == Run Roslyn Compiler with .NET Framework 4.7 ==
  Creating startup profile:
-  Compilation time: 2183 ms  Execution time: 2298 ms
-  Compilation time: 2201 ms  Execution time: 2312 ms
-  Compilation time: 2195 ms  Execution time: 2306 ms
+  Compilation time: 2199 ms  Execution time: 2325 ms
  Use startup profile:
-  Compilation time: 1385 ms  Execution time: 1499 ms
-  Compilation time: 1387 ms  Execution time: 1500 ms
-  Compilation time: 1397 ms  Execution time: 1506 ms
+  Compilation time: 1437 ms  Execution time: 1546 ms
+  Compilation time: 1367 ms  Execution time: 1485 ms
+  Compilation time: 1355 ms  Execution time: 1465 ms
   ```
 
 As you can see it's much slower with .NET framework 4.6.2 and 4.7.
