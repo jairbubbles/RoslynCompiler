@@ -10,38 +10,38 @@ Open RoslynComparer.sln with Visual Studio 2017 and launch Comparer project.
 
 Here are the results on my computer:
 ```
-== Run Roslyn Compiler with .NET Framework 4.6 ==
- Creating startup profile:
-  Compilation time: 1106 ms  Execution time: 1228 ms
-  Compilation time: 1092 ms  Execution time: 1189 ms
-  Compilation time: 1148 ms  Execution time: 1425 ms
- Use startup profile:
-  Compilation time: 707 ms  Execution time: 805 ms
-  Compilation time: 738 ms  Execution time: 832 ms
-  Compilation time: 683 ms  Execution time: 781 ms
-
 == Run Roslyn Compiler with .NET Framework 4.6.1 ==
  Creating startup profile:
-  Compilation time: 1080 ms  Execution time: 1192 ms
-  Compilation time: 1048 ms  Execution time: 1144 ms
-  Compilation time: 1034 ms  Execution time: 1129 ms
+  Compilation time: 955 ms  Execution time: 1064 ms
+  Compilation time: 971 ms  Execution time: 1066 ms
+  Compilation time: 950 ms  Execution time: 1043 ms
  Use startup profile:
-  Compilation time: 665 ms  Execution time: 759 ms
-  Compilation time: 664 ms  Execution time: 760 ms
-  Compilation time: 633 ms  Execution time: 734 ms
+  Compilation time: 586 ms  Execution time: 679 ms
+  Compilation time: 614 ms  Execution time: 708 ms
+  Compilation time: 607 ms  Execution time: 701 ms
 
 == Run Roslyn Compiler with .NET Framework 4.6.2 ==
  Creating startup profile:
-  Compilation time: 2386 ms  Execution time: 2514 ms
-  Compilation time: 2308 ms  Execution time: 2422 ms
-  Compilation time: 2290 ms  Execution time: 2406 ms
+  Compilation time: 2190 ms  Execution time: 2313 ms
+  Compilation time: 2185 ms  Execution time: 2297 ms
+  Compilation time: 2194 ms  Execution time: 2309 ms
  Use startup profile:
-  Compilation time: 1491 ms  Execution time: 1604 ms
-  Compilation time: 1479 ms  Execution time: 1592 ms
-  Compilation time: 1460 ms  Execution time: 1573 ms
+  Compilation time: 1333 ms  Execution time: 1444 ms
+  Compilation time: 1367 ms  Execution time: 1479 ms
+  Compilation time: 1370 ms  Execution time: 1479 ms
+
+== Run Roslyn Compiler with .NET Framework 4.7 ==
+ Creating startup profile:
+  Compilation time: 2183 ms  Execution time: 2298 ms
+  Compilation time: 2201 ms  Execution time: 2312 ms
+  Compilation time: 2195 ms  Execution time: 2306 ms
+ Use startup profile:
+  Compilation time: 1385 ms  Execution time: 1499 ms
+  Compilation time: 1387 ms  Execution time: 1500 ms
+  Compilation time: 1397 ms  Execution time: 1506 ms
   ```
 
-As you can see it's much slower with framework 4.6.2
+As you can see it's much slower with .NET framework 4.6.2 and 4.7.
 
 ## Remarks
 
